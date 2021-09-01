@@ -9,7 +9,7 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.3.0",
-        "laravel/framework": "^8.56",
+        "laravel/framework": "^8.58",
         "laravel/tinker": "^2.6",
         "livewire/livewire": "^2.5",
         "maatwebsite/excel": "^3.1"
@@ -17,9 +17,9 @@
     "require-dev": {
         "facade/ignition": "^2.12",
         "fakerphp/faker": "^1.15.0",
-        "laravel/sail": "^1.10.0",
+        "laravel/sail": "^1.10.1",
         "mockery/mockery": "^1.4.3",
-        "nunomaduro/collision": "^5.8",
+        "nunomaduro/collision": "^5.9",
         "phpunit/phpunit": "^9.5.8"
     },
     "autoload": {
