@@ -9,16 +9,16 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.3.0",
-        "laravel/framework": "^8.58",
+        "laravel/framework": "^8.61",
         "laravel/tinker": "^2.6",
-        "livewire/livewire": "^2.5",
+        "livewire/livewire": "^2.6",
         "maatwebsite/excel": "^3.1"
     },
     "require-dev": {
         "facade/ignition": "^2.12",
         "fakerphp/faker": "^1.16.0",
         "laravel/sail": "^1.10.1",
-        "mockery/mockery": "^1.4.3",
+        "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.9",
         "phpunit/phpunit": "^9.5.9"
     },
