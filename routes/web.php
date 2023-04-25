@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', [HomeController::class, 'index']);
 Route::get('export', [HomeController::class, 'export'])->name('export');
 Route::post('import', [HomeController::class, 'import'])->name('import');
