@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
-use Livewire\Component;
 use App\Jobs\ExportJob;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Storage;
+use Livewire\Component;
 
 class Export extends Component
 {

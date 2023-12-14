@@ -2,15 +2,15 @@
 
 namespace App\Jobs;
 
+use App\Imports\TransactionsImport;
 use Illuminate\Bus\Batchable;
 use Illuminate\Bus\Queueable;
-use App\Imports\TransactionsImport;
-use Maatwebsite\Excel\Facades\Excel;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ImportJob implements ShouldQueue
 {

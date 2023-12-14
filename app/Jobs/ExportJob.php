@@ -2,13 +2,13 @@
 
 namespace App\Jobs;
 
+use App\Exports\TransactionsExport;
 use Illuminate\Bus\Batchable;
 use Illuminate\Bus\Queueable;
-use App\Exports\TransactionsExport;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
 
 class ExportJob implements ShouldQueue
 {

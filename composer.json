@@ -1,16 +1,16 @@
 {
     "name": "laravel/laravel",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "The skeleton application for the Laravel framework.",
+    "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.8",
-        "laravel/framework": "^10.23",
+        "laravel/framework": "^10.28",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "livewire/livewire": "^2.12",
+        "livewire/livewire": "^3.0",
         "maatwebsite/excel": "^3.1"
     },
     "require-dev": {
@@ -18,8 +18,8 @@
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.25",
         "mockery/mockery": "^1.6.6",
-        "nunomaduro/collision": "^7.8",
-        "phpunit/phpunit": "^10.3",
+        "nunomaduro/collision": "^7.10",
+        "phpunit/phpunit": "^10.4",
         "spatie/laravel-ignition": "^2.3"
     },
     "autoload": {
