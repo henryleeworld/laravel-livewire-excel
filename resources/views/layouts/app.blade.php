@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    @vite(['resources/sass/app.scss'])
     @livewireStyles
 </head>
 <body>
@@ -31,6 +31,8 @@
             @yield('content')
         </main>
     </div>
+    <!-- Scripts -->
+    @vite(['resources/js/app.js'])
     @livewireScripts
 </body>
 </html>

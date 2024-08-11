@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use App\Models\Transaction;
+use App\Models\User;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class TransactionSeeder extends Seeder
@@ -15,7 +16,7 @@ class TransactionSeeder extends Seeder
      */
     public function run()
     {
-        $faker = \Faker\Factory::create();
+        $faker = Factory::create();
         $users = collect(User::all()->modelKeys());
         $data = [];
 
