@@ -2,13 +2,11 @@
 
 namespace App\Imports;
 
-use App\Models\User;
 use App\Models\Transaction;
+use App\Models\User;
 use Maatwebsite\Excel\Concerns\ToModel;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Maatwebsite\Excel\Concerns\WithHeadingRow;
-use Maatwebsite\Excel\Concerns\WithBatchInserts;
 use Maatwebsite\Excel\Concerns\WithChunkReading;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
 class TransactionsImport implements ToModel, WithHeadingRow, WithChunkReading
 {

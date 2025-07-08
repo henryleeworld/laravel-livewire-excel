@@ -9,12 +9,20 @@ use Illuminate\Http\Response;
 
 class UpdateTransactionRequest extends FormRequest
 {
-    public function authorize()
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
     {
         return true;
     }
 
-    public function rules()
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     */
+    public function rules(): array
     {
         return [
             'amount' => [

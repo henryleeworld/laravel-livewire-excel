@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Transaction;
-use Illuminate\Http\Request;
 use App\Exports\TransactionsExport;
 use App\Imports\TransactionsImport;
+use App\Models\Transaction;
+use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
 class HomeController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
         $transactions = Transaction::with('user')->simplePaginate(30);

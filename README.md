@@ -1,4 +1,4 @@
-# Laravel 11 Livewire 試算表
+# Laravel 12 Livewire 試算表
 
 引入 maatwebsite 的 excel 套件來擴增匯入或匯出文字 (.csv 或 .xls 或 .xlsx) 檔案，匯出資料可以儲存成可以用 Microsoft Excel 或協力廠商應用程式開啟檔案。
 
@@ -29,11 +29,15 @@ $ npm install
 ```sh
 $ npm run build
 ```
+- 執行 __Artisan__ 指令的 __queue:work__ 來處理被推送進隊列內的新任務。
+```sh
+$ php artisan queue:work
+```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
 - 你可以經由 `/` 來進行資料匯入或匯出。
 
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/bNYPqeA.png)
+![](https://i.imgur.com/YgigxBx.png)
 > 將 Excel 檔案中的資料匯入到資料庫或匯出下載檔案

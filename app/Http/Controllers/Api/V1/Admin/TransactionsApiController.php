@@ -12,11 +12,17 @@ use Symfony\Component\HttpFoundation\Response;
 
 class TransactionsApiController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
         return new TransactionResource(Transaction::with(['user'])->get());
     }
 
+    /**
+     * Store a newly created resource in storage.
+     */
     public function store(StoreTransactionRequest $request)
     {
         $transaction = Transaction::create($request->all());
@@ -26,11 +32,17 @@ class TransactionsApiController extends Controller
             ->setStatusCode(Response::HTTP_CREATED);
     }
 
+    /**
+     * Display the specified resource.
+     */
     public function show(Transaction $transaction)
     {
         return new TransactionResource($transaction->load(['user']));
     }
 
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(UpdateTransactionRequest $request, Transaction $transaction)
     {
         $transaction->update($request->all());
@@ -40,6 +52,9 @@ class TransactionsApiController extends Controller
             ->setStatusCode(Response::HTTP_ACCEPTED);
     }
 
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(Transaction $transaction)
     {
         $transaction->delete();

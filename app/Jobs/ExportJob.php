@@ -14,7 +14,10 @@ class ExportJob implements ShouldQueue
 {
     use Batchable, Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public function handle()
+    /**
+     * Execute the job.
+     */
+    public function handle(): void
     {
         (new TransactionsExport)->store('public/transactions.csv');
     }

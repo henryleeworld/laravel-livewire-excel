@@ -3,12 +3,10 @@
 namespace App\Exports;
 
 use App\Models\Transaction;
-use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\Exportable;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Maatwebsite\Excel\Concerns\WithMapping;
+use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\WithHeadings;
-
+use Maatwebsite\Excel\Concerns\WithMapping;
 
 class TransactionsExport implements FromQuery, WithHeadings, WithMapping
 {

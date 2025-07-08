@@ -5,7 +5,6 @@ namespace App\Jobs;
 use App\Imports\TransactionsImport;
 use Illuminate\Bus\Batchable;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\SerializesModels;
@@ -20,8 +19,6 @@ class ImportJob implements ShouldQueue
 
     /**
      * Create a new job instance.
-     *
-     * @return void
      */
     public function __construct($uploadFile)
     {
@@ -30,10 +27,8 @@ class ImportJob implements ShouldQueue
 
     /**
      * Execute the job.
-     *
-     * @return void
      */
-    public function handle()
+    public function handle(): void
     {
         Excel::import(new TransactionsImport, $this->uploadFile);
     }
