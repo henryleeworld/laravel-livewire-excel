@@ -3,15 +3,16 @@
 namespace App\Livewire;
 
 use App\Jobs\ExportJob;
+use Illuminate\Bus\Batch;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 
 class Export extends Component
 {
-    public $batchId;
-    public $exporting = false;
-    public $exportFinished = false;
+    public ?string $batchId = null;
+    public bool $exporting = false;
+    public bool $exportFinished = false;
 
     public function export()
     {
@@ -25,7 +26,7 @@ class Export extends Component
         $this->batchId = $batch->id;
     }
 
-    public function getExportBatchProperty()
+    public function getExportBatchProperty(): ?Batch
     {
         if (!$this->batchId) {
             return null;
@@ -39,9 +40,15 @@ class Export extends Component
         return Storage::download('public/transactions.csv');
     }
 
-    public function updateExportProgress()
+    public function updateExportProgress(): void
     {
-        $this->exportFinished = $this->exportBatch->finished();
+        $batch = $this->exportBatch;
+
+        if (! $batch) {
+            return;
+        }
+
+        $this->exportFinished = $batch->finished();
 
         if ($this->exportFinished) {
             $this->exporting = false;

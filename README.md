@@ -1,9 +1,9 @@
-# Laravel 12 Livewire 試算表
+# Laravel 13 Livewire 試算表
 
 引入 maatwebsite 的 excel 套件來擴增匯入或匯出文字 (.csv 或 .xls 或 .xlsx) 檔案，匯出資料可以儲存成可以用 Microsoft Excel 或協力廠商應用程式開啟檔案。
 
 ## 使用方式
-- 打開 php.ini 檔案，啟用 PHP 擴充模組 gd，並重啟服務器。
+- 打開 php.ini 檔案，啟用 PHP 擴充模組 gd 和 zip，並重啟服務器。
 - 把整個專案複製一份到你的電腦裡，這裡指的「內容」不是只有檔案，而是指所有整個專案的歷史紀錄、分支、標籤等內容都會複製一份下來。
 ```sh
 $ git clone
@@ -39,5 +39,5 @@ $ php artisan queue:work
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/YgigxBx.png)
+![](https://i.imgur.com/Listno0.png)
 > 將 Excel 檔案中的資料匯入到資料庫或匯出下載檔案

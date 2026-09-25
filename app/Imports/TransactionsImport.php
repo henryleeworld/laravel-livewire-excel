@@ -4,6 +4,7 @@ namespace App\Imports;
 
 use App\Models\Transaction;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Model;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithChunkReading;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
@@ -17,7 +18,7 @@ class TransactionsImport implements ToModel, WithHeadingRow, WithChunkReading
         $this->users = User::all(['id', 'name'])->pluck('id', 'name');
     }
 
-    public function model(array $row)
+    public function model(array $row): Model|array|null
     {
         return new Transaction([
             'description' => $row['description'],

@@ -10,11 +10,9 @@ use Illuminate\Database\Seeder;
 class TransactionSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
-     *
-     * @return void
+     * Run the database seeders.
      */
-    public function run()
+    public function run(): void
     {
         $faker = Factory::create();
         $users = collect(User::all()->modelKeys());

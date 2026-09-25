@@ -3,6 +3,9 @@
 namespace App\Exports;
 
 use App\Models\Transaction;
+use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
+use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Database\Query\Builder;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\WithHeadings;
@@ -12,7 +15,7 @@ class TransactionsExport implements FromQuery, WithHeadings, WithMapping
 {
     use Exportable;
 
-    public function query()
+    public function query(): Builder|EloquentBuilder|Relation
     {
         return Transaction::query()->with('user');
     }

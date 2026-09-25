@@ -15,14 +15,12 @@ class ImportJob implements ShouldQueue
 {
     use Batchable, Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public $uploadFile;
-
     /**
      * Create a new job instance.
      */
-    public function __construct($uploadFile)
+    public function __construct(public $uploadFile)
     {
-        $this->uploadFile = $uploadFile;
+        //
     }
 
     /**

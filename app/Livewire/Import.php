@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Jobs\ImportJob;
+use Illuminate\Bus\Batch;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
@@ -12,19 +13,20 @@ class Import extends Component
 {
     use WithFileUploads;
 
-    public $batchId;
-    public $importFile;
-    public $importing = false;
-    public $importFilePath;
-    public $importFinished = false;
+    public ?string $batchId = null;
+    public $importFile = null;
+    public bool $importing = false;
+    public ?string $importFilePath = null;
+    public bool $importFinished = false;
 
-    public function import()
+    public function import(): void
     {
         $this->validate([
-            'importFile' => 'required',
+            'importFile' => ['required', 'file'],
         ]);
 
         $this->importing = true;
+        $this->importFinished = false;
         $this->importFilePath = $this->importFile->store('imports');
 
         $batch = Bus::batch([
@@ -34,7 +36,7 @@ class Import extends Component
         $this->batchId = $batch->id;
     }
 
-    public function getImportBatchProperty()
+    public function getImportBatchProperty(): ?Batch
     {
         if (!$this->batchId) {
             return null;
@@ -43,12 +45,20 @@ class Import extends Component
         return Bus::findBatch($this->batchId);
     }
 
-    public function updateImportProgress()
+    public function updateImportProgress(): void
     {
-        $this->importFinished = $this->importBatch->finished();
+        $batch = $this->importBatch;
+
+        if (! $batch) {
+            return;
+        }
+
+        $this->importFinished = $batch->finished();
 
         if ($this->importFinished) {
-            Storage::delete($this->importFilePath);
+            if ($this->importFilePath) {
+                Storage::delete($this->importFilePath);
+            }
             $this->importing = false;
         }
     }
